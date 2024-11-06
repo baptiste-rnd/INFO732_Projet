@@ -80,16 +80,37 @@ public class User {
         group.addMessage(newMessage);
     }
     
-    public void deleteMessage() {
-
+    public void deleteMessage(Message message, Group group) {
+        if (message.getOwner() != this) {
+            System.out.println("vous n'avez pas le droit car ce n'est pas votre message");
+        } 
+        else {
+            group.removeMessage(message);
+        }
     }
     
-    public Document createDocument(String title, String content, String format, boolean isShared) {
-
+    public Document createDocument(String title, String content, String format) {
+        Document newDocument = new Document(title, content, format, this, false);
+        return newDocument;
     }
 
-    public void modifyDocument() {
+    public void publishDocument(Document document, Group group){
+        if (document.getOwner() != this) {
+            System.out.println("vous n'avez pas le droit car ce n'est pas votre document");
+        } 
+        else {
+            document.setShared(true);
+            group.addDocument(document);
+        }
+    }
 
+    public void modifyDocument(Document document, String content) {
+        if (document.getOwner() != this) {
+            System.out.println("vous n'avez pas le droit car ce n'est pas votre document");
+        } 
+        else {
+            document.setContent(content);
+        }
     }
 
     public void onMessageReceived() {
