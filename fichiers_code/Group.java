@@ -74,11 +74,7 @@ class Group {
     }
 
     public void removeDocument(Document document) {
-<<<<<<< HEAD
-        this.documents.remove(documents);// Supprimer un document du chat de groupe
-=======
         this.documents.remove(document);// Supprimer un document du chat de groupe
->>>>>>> 44a78cbf6133df4cf619ef7e6c64bc70c23cdf4c
     }
 
 }
