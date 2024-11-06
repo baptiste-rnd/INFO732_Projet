@@ -69,6 +69,9 @@ public class Main {
 
         // Test de la classe CampusGroup
         Announcement announcement = new Announcement("Meeting", "There is a meeting tomorrow.");
+        campus.getCampusGroup().addMembre(user1);
+        campus.getCampusGroup().addMembre(user2);
+        campus.getCampusGroup().addMembre(user3);
         campus.getCampusGroup().viewAnnoucements();
         campus.getCampusGroup().postAnnouncement(announcement);
     }
