@@ -10,9 +10,9 @@ public class Group {
     private ArrayList<Message> chat;
     private ArrayList<Document> documents;
 
-    public Group(String name) {
+    public Group(String name, GroupManager groupManager) {
         this.name = name; // Initialise un groupe avec un nom
-        this.groupmanager = ;
+        this.groupmanager = groupManager;
         this.membres = new ArrayList<User>();
         this.chat = new ArrayList<Message>();
         this.documents = new ArrayList<Document>();
@@ -32,6 +32,7 @@ public class Group {
 
     public void addMembre(User user) {
         this.membres.add(user); // Ajoute un membre au groupe
+        nbPeople++;
     }
 
     public void removeMembre(User user) {
@@ -84,5 +85,9 @@ public class Group {
 
     public void notifyEveryoneNewMessage() {
         groupmanager.notifyMessageReceived(this);
+    }
+
+    public ArrayList<User> getMembres() {
+        return membres;
     }
 }

@@ -1,5 +1,8 @@
 package fichiers_code;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class User implements GroupListener {
     private int studentNb;
     private int password;
@@ -72,7 +75,15 @@ public class User implements GroupListener {
                 + surname + "\n niveau : " + studyYear;
     }
 
-    public void createGroupe(String name) {
+    public List<Object> createGroupe(String namegroup) {
+        List<Object> res = new ArrayList<>();
+        GroupManager groupManager = new GroupManager();
+        Group group = new Group(namegroup, groupManager);
+        AdminGroup admin = new AdminGroup(studentNb, password, name, name, age, studyYear, groupManager, group);
+        group.addMembre(this);
+        res.add(group);
+        res.add(admin);
+        return res;
     }
 
     public void createMessage(String content, Group group) {
@@ -83,6 +94,10 @@ public class User implements GroupListener {
     public void deleteMessage(Message message, Group group) {
         if (message.getOwner() != this) {
             System.out.println("vous n'avez pas le droit car ce n'est pas votre message");
+
+        }
+        if (!group.getMembres().contains(this)) {
+            System.out.println("vous ne faites pas partie du groupe");
         } else {
             group.removeMessage(message);
         }
@@ -96,6 +111,9 @@ public class User implements GroupListener {
     public void publishDocument(Document document, Group group) {
         if (document.getOwner() != this) {
             System.out.println("vous n'avez pas le droit car ce n'est pas votre document");
+        }
+        if (!group.getMembres().contains(this)) {
+            System.out.println("vous ne faites pas partie du groupe");
         } else {
             document.setShared(true);
             group.addDocument(document);
@@ -111,7 +129,7 @@ public class User implements GroupListener {
     }
 
     public void onMessageReceived(Group group) {
-        System.out.println("message recu");
+        System.out.println(name + " a recu le message");
     }
 
     public void seeMessage(Group group) {

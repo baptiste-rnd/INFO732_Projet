@@ -8,7 +8,8 @@ public class CampusGroup extends Group {
 
     // Constructor
     public CampusGroup(String name) {
-        super(name);
+        super(name, null);
+
     }
 
     // Getters
@@ -18,7 +19,7 @@ public class CampusGroup extends Group {
 
     // Methods
     public void viewAnnoucements() {
-        for(Announcement announcement : AnnouncementList) {
+        for (Announcement announcement : AnnouncementList) {
             System.out.println(announcement.toString());
         }
     }

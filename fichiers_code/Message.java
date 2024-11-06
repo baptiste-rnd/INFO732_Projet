@@ -27,7 +27,7 @@ public class Message {
 
     @Override
     public String toString() {
-        return "contenu : " + content + " écrit par : " + owner;
+        return "contenu : " + content + " écrit par : " + owner.getName();
     }
 
 }
