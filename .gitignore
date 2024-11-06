@@ -1,0 +1,37 @@
+# Fichiers Java compilés
+*.class
+
+# Dossiers de compilation
+/bin/
+/build/
+
+# Répertoires de dépendances (ex : Maven, Gradle)
+*.jar
+*.war
+*.ear
+/.mvn/
+/.gradle/
+/target/
+/lib/
+
+# Fichiers spécifiques aux IDEs
+.vscode/               # Fichiers de configuration de VS Code
+.idea/                 # Fichiers de configuration de JetBrains IDEs (comme IntelliJ IDEA)
+*.iml                  # Fichiers de projet IntelliJ IDEA
+
+# Fichiers temporaires d'OS
+.DS_Store              # macOS
+Thumbs.db              # Windows
+ehthumbs.db            # Windows
+
+# Fichiers logs
+*.log
+
+# Fichiers de sauvegarde
+*~
+*.bak
+
+# Fichiers temporaires créés par l'IDE
+.vscode/settings.json  # Fichier de settings de VSCode
+.vscode/tasks.json     # Fichier de tâches de VSCode
+.vscode/launch.json    # Fichier de configuration des lancements
