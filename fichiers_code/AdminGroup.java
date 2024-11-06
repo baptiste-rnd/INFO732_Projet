@@ -3,8 +3,9 @@ package fichiers_code;
 public class AdminGroup extends User {
     private GroupManager groupManager;
 
-    public AdminGroup(GroupManager groupManager) {
-        super(); // Appel au constructeur de la classe parente User
+    public AdminGroup(int studentNb, int password, String name, String surname, int age, int studyYear, GroupManager groupManager) {
+
+        super(studentNb, password, name, surname, age, studyYear); // Appel au constructeur de la classe parente User
         this.groupManager = groupManager;
     }
 
