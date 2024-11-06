@@ -39,9 +39,10 @@ public class AdminGroup extends User {
     public void inviteUser(User user) {
         if (user != null) {
             group.addMembre(user);
+            groupManager.addGroupListener(user);
             System.out.println(user.getName() + " has been invited to the group " + group.getName());
             groupManager.notifyUserInvited(group, user); // Notification des listeners via GroupManager
-            groupManager.addGroupListener(user);
+
         } else {
             System.out.println("Invalid User.");
         }
@@ -51,6 +52,7 @@ public class AdminGroup extends User {
     public void excludeUser(User user) {
         if (group.getMembres().contains(user)) {
             group.removeMembre(user);
+            groupManager.removeGroupListener(user);
             System.out.println(user.getName() + " has been excluded from the group " + group.getName());
             groupManager.notifyUserExcluded(group, user); // Notification des listeners via GroupManager
         } else {

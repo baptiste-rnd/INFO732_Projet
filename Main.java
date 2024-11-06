@@ -17,7 +17,7 @@ public class Main {
         // Creation d'un deuxieme groupe
         List<Object> res2 = user3.createGroupe("test2");
         Group group2 = (Group) res2.get(0);
-        AdminGroup admingroup2 = (AdminGroup) res.get(1);
+        AdminGroup admingroup2 = (AdminGroup) res2.get(1);
 
         // L'admin ajoute un autre membre au groupe
         admingroup1.inviteUser(user2);
@@ -62,10 +62,10 @@ public class Main {
         // exclusion d'un membre
         admingroup1.excludeUser(user2);
 
+        admingroup1.seeMessage(group1);
         // Test de la classe Campus
         Campus campus = Campus.getInstance("Polytech");
         System.out.println("Campus instance: " + campus);
-        admingroup1.seeMessage(group1);
 
         // Test de la classe CampusGroup
         CampusGroup campusGroup = new CampusGroup("Campus Group");

@@ -80,9 +80,7 @@ public class User implements GroupListener {
         GroupManager groupManager = new GroupManager();
         Group group = new Group(namegroup, groupManager);
         AdminGroup admin = new AdminGroup(studentNb, password, name, name, age, studyYear, groupManager, group);
-
-        groupManager.addGroupListener(this);
-
+        admin.inviteUser(this);
         res.add(group);
         res.add(admin);
         return res;

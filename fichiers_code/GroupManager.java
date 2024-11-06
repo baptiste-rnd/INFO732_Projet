@@ -15,7 +15,6 @@ public class GroupManager {
     public void addGroupListener(GroupListener listener) {
         if (listener != null && !groupListeners.contains(listener)) {
             groupListeners.add(listener);
-            System.out.println("Listener has been added successfully.");
         } else {
             System.out.println("Invalid listener or already exists.");
         }
@@ -24,7 +23,6 @@ public class GroupManager {
     // Méthode pour retirer un listener
     public void removeGroupListener(GroupListener listener) {
         if (listener != null && groupListeners.remove(listener)) {
-            System.out.println("Listener has been removed successfully.");
         } else {
             System.out.println("Invalid listener or not found.");
         }
