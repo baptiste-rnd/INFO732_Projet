@@ -8,6 +8,7 @@ class Group {
     private GroupManager groupmanager;
     private ArrayList<User> membres;
     private ArrayList<Message> chat;
+    private ArrayList<Document> documents;
 
     public Group(String name) {
         this.name = name; // Initialise un groupe avec un nom
@@ -67,4 +68,13 @@ class Group {
             System.out.println(message.getContent()); // Affiche tous les messages du chat
         }
     }
+
+    public void addDocument(Document document) {
+        documents.add(document); // Ajoute un document au chat du groupe
+    }
+
+    public void removeDocumen(Document document) {
+        this.documents.remove(documents);// Supprimer un document du chat de groupe
+    }
+
 }
