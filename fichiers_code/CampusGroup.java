@@ -24,6 +24,6 @@ public class CampusGroup extends Group {
     }
 
     public void postAnnouncement(Announcement announcement) {
-        // 
+        //
     }
 }
