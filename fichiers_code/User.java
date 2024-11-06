@@ -80,7 +80,9 @@ public class User implements GroupListener {
         GroupManager groupManager = new GroupManager();
         Group group = new Group(namegroup, groupManager);
         AdminGroup admin = new AdminGroup(studentNb, password, name, name, age, studyYear, groupManager, group);
-        group.addMembre(this);
+
+        groupManager.addGroupListener(this);
+
         res.add(group);
         res.add(admin);
         return res;
@@ -129,7 +131,7 @@ public class User implements GroupListener {
     }
 
     public void onMessageReceived(Group group) {
-        System.out.println(name + " a recu le message");
+        System.out.println(name + " a recu un message");
     }
 
     public void seeMessage(Group group) {
