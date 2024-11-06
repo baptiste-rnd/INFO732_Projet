@@ -73,7 +73,7 @@ class Group {
         documents.add(document); // Ajoute un document au chat du groupe
     }
 
-    public void removeDocumen(Document document) {
+    public void removeDocument(Document document) {
         this.documents.remove(documents);// Supprimer un document du chat de groupe
     }
 
