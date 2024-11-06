@@ -2,7 +2,7 @@ package fichiers_code;
 
 import java.util.ArrayList;
 
-class Group {
+public class Group {
     private String name;
     private int nbPeople;
     private GroupManager groupmanager;

@@ -1,6 +1,6 @@
 package fichiers_code;
 
-public class User {
+public class User implements GroupListener {
     private int studentNb;
     private int password;
     private String name;
@@ -116,5 +116,29 @@ public class User {
 
     public void seeMessage(Group group) {
         group.afficherChat();
+    }
+
+    @Override
+    public void onMessageRemoved(Group group, Message message) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'onMessageRemoved'");
+    }
+
+    @Override
+    public void onDocumentRemoved(Group group, Document document) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'onDocumentRemoved'");
+    }
+
+    @Override
+    public void onUserInvited(Group group, User user) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'onUserInvited'");
+    }
+
+    @Override
+    public void onUserExcluded(Group group, User user) {
+        // TODO Auto-generated method stub
+        throw new UnsupportedOperationException("Unimplemented method 'onUserExcluded'");
     }
 }
