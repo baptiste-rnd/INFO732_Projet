@@ -63,18 +63,9 @@ Développé par :
    cd INFO732_Projet
    ```
 
-2. **Installer les dépendances** :
-   ```bash
-   npm install
-   ```
+2. **Lancer l'application** :
 
-3. **Lancer l'application** :
-   ```bash
-   npm start
-   ```
-
-4. **Accéder à l'application** :
-   Ouvrez `http://localhost:3000` dans votre navigateur.
+Run la classe `Main`
 
 ## Objectifs Futurs
 - Développement d'une application mobile.
