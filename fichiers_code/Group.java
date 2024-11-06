@@ -12,6 +12,10 @@ public class Group {
 
     public Group(String name) {
         this.name = name; // Initialise un groupe avec un nom
+        this.groupmanager = ;
+        this.membres = new ArrayList<User>();
+        this.chat = new ArrayList<Message>();
+        this.documents = new ArrayList<Document>();
     }
 
     public String getName() {
