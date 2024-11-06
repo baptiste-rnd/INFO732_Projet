@@ -32,7 +32,7 @@ class Group {
 
     public void removeMembre(User user) {
         for (User membre : membres) {
-            if (membre.getStudentNb().equals(user.getStudentNb())) {
+            if (membre.getStudentNb() == user.getStudentNb()) {
                 this.membres.remove(user); // Supprime un membre du groupe
             }
         }
@@ -58,12 +58,12 @@ class Group {
         return this.chat; // Retourne la liste des messages du chat du groupe
     }
 
-    public String toString() {
+    public void String() {
         System.out.println("Nom: " + this.name + "\nNombres de personnes" + this.nbPeople);
 
     }
 
-    public String afficherChat() {
+    public void afficherChat() {
         for (Message message : chat) {
             System.out.println(message.getContent()); // Affiche tous les messages du chat
         }
@@ -73,8 +73,8 @@ class Group {
         documents.add(document); // Ajoute un document au chat du groupe
     }
 
-    public void removeDocumen(Document document) {
-        this.documents.remove(documents);// Supprimer un document du chat de groupe
+    public void removeDocument(Document document) {
+        this.documents.remove(document);// Supprimer un document du chat de groupe
     }
 
 }

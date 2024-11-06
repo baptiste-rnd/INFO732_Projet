@@ -114,6 +114,6 @@ public class User {
     }
 
     public void onMessageReceived() {
-        
+
     }
 }
