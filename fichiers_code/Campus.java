@@ -7,7 +7,7 @@ public class Campus {
 
     // Constructor
     private Campus() {
-        this.campusGroup = new CampusGroup(null);
+        this.campusGroup = new CampusGroup("campusgroup");
     }
 
     // Methods

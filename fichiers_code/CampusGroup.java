@@ -8,7 +8,7 @@ public class CampusGroup extends Group {
 
     // Constructor
     public CampusGroup(String name) {
-        super(name, null);
+        super(name, new GroupManager());
         AnnouncementList = new ArrayList<Announcement>();
     }
 
