@@ -3,6 +3,7 @@ import java.util.List;
 import fichiers_code.*;
 
 public class Main {
+    @SuppressWarnings("unused")
     public static void main(String[] args) {
         // Création d'utilisateurs
         User user1 = new User(1, 1234, "Alice", "Dupont", 20, 3);
@@ -23,7 +24,7 @@ public class Main {
         admingroup1.inviteUser(user2);
 
         System.out.println("Personne dans le groupe: ");
-        System.out.println(group1.getMembres());
+        System.out.println(group1.getMembres() + "\n");
 
         // Ajout d'un message
         user1.createMessage("Hello, this is a test message!", group1);
@@ -32,12 +33,13 @@ public class Main {
         // affichage du chat
         System.out.println(" \nChat du groupe: ");
         group1.afficherChat();
+
         // Suppression d'un message
         Message messageToDelete = group1.getChat().get(0);
         user2.deleteMessage(messageToDelete, group1);
         user1.deleteMessage(messageToDelete, group1);
 
-        System.out.println(" \nChat du groupe: ");
+        System.out.println(" \nChat du groupe1: ");
         group1.afficherChat();
 
         // Création d'un document
@@ -57,11 +59,12 @@ public class Main {
         // ajout d'un doc quand fais pas partie du groupe
         user2.publishDocument(document, group2);
 
-        System.out.println(group2.getMembres());
+        System.out.println("Membres du groupe2 :\n" + group2.getMembres() + "\n");
 
         // exclusion d'un membre
         admingroup1.excludeUser(user2);
 
+        System.out.println("Message du chat du groupe 1:\n");
         admingroup1.seeMessage(group1);
         // Test de la classe Campus
         Campus campus = Campus.getInstance("Polytech");
