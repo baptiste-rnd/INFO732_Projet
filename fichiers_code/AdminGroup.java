@@ -1,4 +1,6 @@
+package fichiers_code;
 import javax.swing.GroupLayout.Group;
+
 
 public class AdminGroup extends User{
     private GroupManager groupManager;
