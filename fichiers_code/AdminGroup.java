@@ -1,12 +1,12 @@
 package fichiers_code;
+
 import javax.swing.GroupLayout.Group;
 
-
-public class AdminGroup extends User{
+public class AdminGroup extends User {
     private GroupManager groupManager;
 
     public AdminGroup(GroupManager groupManager) {
-        super();  // Appel au constructeur de la classe parente User
+        super(); // Appel au constructeur de la classe parente User
         this.groupManager = groupManager;
     }
 
@@ -28,25 +28,30 @@ public class AdminGroup extends User{
         }
     }
 
+<<<<<<< HEAD
     public void inviteUser(Group group, User user){
         if (user!=null) {
             group.addMembre(user);
             System.out.println(user.getUsername() + " has been invited in the group"  + group.getName());
+=======
+    public void inviteUser(Group group, User user) {
+        if (user != null) {
+            group.add(user);
+            System.out.println(user.getUsername() + " has been invited in the group" + group.getName());
+>>>>>>> 44a78cbf6133df4cf619ef7e6c64bc70c23cdf4c
 
-        }
-        else{
+        } else {
             System.out.println("Invalid User.");
         }
     }
 
-    public void excludeUser(Group group, User user){
-        if (user!=null) {
+    public void excludeUser(Group group, User user) {
+        if (user != null) {
             group.remove(user);
-            System.out.println(user.getUsername() + "has been deleted from the group"  + group.getName());
-        }
-        else{
+            System.out.println(user.getUsername() + "has been deleted from the group" + group.getName());
+        } else {
             System.out.println("Invalid User.");
         }
-            
+
     }
 }
