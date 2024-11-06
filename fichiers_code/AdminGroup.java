@@ -1,7 +1,5 @@
 package fichiers_code;
 
-import javax.swing.GroupLayout.Group;
-
 public class AdminGroup extends User {
     private GroupManager groupManager;
 
@@ -19,9 +17,9 @@ public class AdminGroup extends User {
         }
     }
 
-    public void removeDocument(Group group) {
+    public void removeDocument(Group group, Document doc) {
         if (group != null && group.getGroupmanager().equals(this)) {
-            group.removeDocument();
+            group.removeDocument(doc);
             System.out.println("The document has been successfully deleted.");
         } else {
             System.out.println("You cannot delete this document");
