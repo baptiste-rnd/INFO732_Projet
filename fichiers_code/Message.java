@@ -4,7 +4,7 @@ public class Message {
     private String content;
     private User owner;
 
-    public Message(String content,User owner) {
+    public Message(String content, User owner) {
         this.content = content;
         this.owner = owner;
     }
@@ -29,5 +29,5 @@ public class Message {
     public String toString() {
         return "contenu : " + content + " écrit par : " + owner;
     }
-    
+
 }

@@ -79,26 +79,24 @@ public class User {
         Message newMessage = new Message(content, this);
         group.addMessage(newMessage);
     }
-    
+
     public void deleteMessage(Message message, Group group) {
         if (message.getOwner() != this) {
             System.out.println("vous n'avez pas le droit car ce n'est pas votre message");
-        } 
-        else {
+        } else {
             group.removeMessage(message);
         }
     }
-    
+
     public Document createDocument(String title, String content, String format) {
         Document newDocument = new Document(title, content, format, this, false);
         return newDocument;
     }
 
-    public void publishDocument(Document document, Group group){
+    public void publishDocument(Document document, Group group) {
         if (document.getOwner() != this) {
             System.out.println("vous n'avez pas le droit car ce n'est pas votre document");
-        } 
-        else {
+        } else {
             document.setShared(true);
             group.addDocument(document);
         }
@@ -107,13 +105,16 @@ public class User {
     public void modifyDocument(Document document, String content) {
         if (document.getOwner() != this) {
             System.out.println("vous n'avez pas le droit car ce n'est pas votre document");
-        } 
-        else {
+        } else {
             document.setContent(content);
         }
     }
 
-    public void onMessageReceived() {
+    public void onMessageReceived(Group group) {
+        System.out.println("message recu");
+    }
 
+    public void seeMessage(Group group) {
+        group.afficherChat();
     }
 }

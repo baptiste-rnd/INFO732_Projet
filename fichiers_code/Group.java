@@ -48,6 +48,7 @@ class Group {
 
     public void addMessage(Message message) {
         chat.add(message); // Ajoute un message au chat du groupe
+        this.notifyEveryoneNewMessage();
     }
 
     public void removeMessage(Message message) {
@@ -65,7 +66,7 @@ class Group {
 
     public void afficherChat() {
         for (Message message : chat) {
-            System.out.println(message.getContent()); // Affiche tous les messages du chat
+            System.out.println(message); // Affiche tous les messages du chat
         }
     }
 
@@ -77,4 +78,7 @@ class Group {
         this.documents.remove(document);// Supprimer un document du chat de groupe
     }
 
+    public void notifyEveryoneNewMessage() {
+        groupmanager.notifyMessageReceived(this);
+    }
 }

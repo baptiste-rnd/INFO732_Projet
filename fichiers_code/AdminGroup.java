@@ -3,7 +3,8 @@ package fichiers_code;
 public class AdminGroup extends User {
     private GroupManager groupManager;
 
-    public AdminGroup(int studentNb, int password, String name, String surname, int age, int studyYear, GroupManager groupManager) {
+    public AdminGroup(int studentNb, int password, String name, String surname, int age, int studyYear,
+            GroupManager groupManager) {
 
         super(studentNb, password, name, surname, age, studyYear); // Appel au constructeur de la classe parente User
         this.groupManager = groupManager;
@@ -27,10 +28,10 @@ public class AdminGroup extends User {
         }
     }
 
-    public void inviteUser(Group group, User user){
-        if (user!=null) {
+    public void inviteUser(Group group, User user) {
+        if (user != null) {
             group.addMembre(user);
-            System.out.println(user.getName() + " has been invited in the group"  + group.getName());
+            System.out.println(user.getName() + " has been invited in the group" + group.getName());
 
         } else {
             System.out.println("Invalid User.");
