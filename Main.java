@@ -77,5 +77,6 @@ public class Main {
         campus.getCampusGroup().addMembre(user3);
         campus.getCampusGroup().viewAnnoucements();
         campus.getCampusGroup().postAnnouncement(announcement);
+        
     }
 }

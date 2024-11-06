@@ -36,9 +36,7 @@ public class Group {
     }
 
     public void removeMembre(User user) {
-
         this.membres.remove(user); // Supprime un membre du groupe
-
     }
 
     public GroupManager getGroupmanager() {
