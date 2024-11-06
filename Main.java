@@ -32,6 +32,7 @@ public class Main {
         // affichage du chat
         System.out.println(" \nChat du groupe: ");
         group1.afficherChat();
+
         // Suppression d'un message
         Message messageToDelete = group1.getChat().get(0);
         user2.deleteMessage(messageToDelete, group1);
@@ -74,5 +75,6 @@ public class Main {
         campus.getCampusGroup().addMembre(user3);
         campus.getCampusGroup().viewAnnoucements();
         campus.getCampusGroup().postAnnouncement(announcement);
+        
     }
 }
