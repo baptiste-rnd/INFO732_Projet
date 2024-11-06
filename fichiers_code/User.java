@@ -79,11 +79,11 @@ public class User {
         Message newMessage = new Message(content, this);
         group.addMessage(newMessage);
     }
-    
+
     public void deleteMessage() {
 
     }
-    
+
     public Document createDocument(String title, String content, String format, boolean isShared) {
 
     }
@@ -93,6 +93,6 @@ public class User {
     }
 
     public void onMessageReceived() {
-        
+
     }
 }

@@ -54,7 +54,7 @@ public class Document {
         this.isShared = isShared; // Modifie l'état de partage du document
     }
 
-    public String toString() {
+    public void String() {
         System.out
                 .println("Titre: " + this.title + "\n" + "Créateur: " + this.owner.getSurname() + "\n" + this.content);
         // Affiche les détails du document (titre, créateur, contenu)
