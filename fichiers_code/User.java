@@ -136,27 +136,22 @@ public class User implements GroupListener {
         group.afficherChat();
     }
 
-    @Override
     public void onMessageRemoved(Group group, Message message) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'onMessageRemoved'");
+        // pass
     }
 
     @Override
     public void onDocumentRemoved(Group group, Document document) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'onDocumentRemoved'");
+        // pass
     }
 
     @Override
     public void onUserInvited(Group group, User user) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'onUserInvited'");
+        // pass
     }
 
     @Override
     public void onUserExcluded(Group group, User user) {
-        // TODO Auto-generated method stub
-        throw new UnsupportedOperationException("Unimplemented method 'onUserExcluded'");
+        // pass
     }
 }

@@ -9,7 +9,7 @@ public class CampusGroup extends Group {
     // Constructor
     public CampusGroup(String name) {
         super(name, null);
-
+        AnnouncementList = new ArrayList<Announcement>();
     }
 
     // Getters

@@ -49,7 +49,7 @@ public class AdminGroup extends User {
 
     // Méthode pour exclure un utilisateur du groupe
     public void excludeUser(User user) {
-        if (user != null) {
+        if (group.getMembres().contains(user)) {
             group.removeMembre(user);
             System.out.println(user.getName() + " has been excluded from the group " + group.getName());
             groupManager.notifyUserExcluded(group, user); // Notification des listeners via GroupManager

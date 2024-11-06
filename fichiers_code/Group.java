@@ -36,11 +36,9 @@ public class Group {
     }
 
     public void removeMembre(User user) {
-        for (User membre : membres) {
-            if (membre.getStudentNb() == user.getStudentNb()) {
-                this.membres.remove(user); // Supprime un membre du groupe
-            }
-        }
+
+        this.membres.remove(user); // Supprime un membre du groupe
+
     }
 
     public GroupManager getGroupmanager() {

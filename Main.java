@@ -22,7 +22,8 @@ public class Main {
         // L'admin ajoute un autre membre au groupe
         admingroup1.inviteUser(user2);
 
-        System.out.println("nb personne dans le groupe: " + group1.getNbPeople());
+        System.out.println("Personne dans le groupe: ");
+        System.out.println(group1.getMembres());
 
         // Ajout d'un message
         user1.createMessage("Hello, this is a test message!", group1);
@@ -57,9 +58,14 @@ public class Main {
         user2.publishDocument(document, group2);
 
         System.out.println(group2.getMembres());
+
+        // exclusion d'un membre
+        admingroup1.excludeUser(user2);
+
         // Test de la classe Campus
         Campus campus = Campus.getInstance("Polytech");
         System.out.println("Campus instance: " + campus);
+        admingroup1.seeMessage(group1);
 
         // Test de la classe CampusGroup
         CampusGroup campusGroup = new CampusGroup("Campus Group");
