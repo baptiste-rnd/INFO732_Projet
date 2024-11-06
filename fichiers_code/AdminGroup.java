@@ -19,19 +19,26 @@ public class AdminGroup extends User {
         }
     }
 
-    public void removeDocument(Document doc) {
-        if (doc != null && doc.getOwner().equals(this)) {
-            doc.delete();
+    public void removeDocument(Group group) {
+        if (group != null && group.getOwner().equals(this)) {
+            group.removeDocument();
             System.out.println("The document has been successfully deleted.");
         } else {
             System.out.println("You cannot delete this document");
         }
     }
 
+<<<<<<< HEAD
+    public void inviteUser(Group group, User user){
+        if (user!=null) {
+            group.addMembre(user);
+            System.out.println(user.getUsername() + " has been invited in the group"  + group.getName());
+=======
     public void inviteUser(Group group, User user) {
         if (user != null) {
             group.add(user);
             System.out.println(user.getUsername() + " has been invited in the group" + group.getName());
+>>>>>>> 44a78cbf6133df4cf619ef7e6c64bc70c23cdf4c
 
         } else {
             System.out.println("Invalid User.");
