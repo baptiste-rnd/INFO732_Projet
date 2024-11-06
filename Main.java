@@ -68,9 +68,8 @@ public class Main {
         System.out.println("Campus instance: " + campus);
 
         // Test de la classe CampusGroup
-        CampusGroup campusGroup = new CampusGroup("Campus Group");
         Announcement announcement = new Announcement("Meeting", "There is a meeting tomorrow.");
-        campusGroup.viewAnnoucements();
-        campusGroup.postAnnouncement(announcement);
+        campus.getCampusGroup().viewAnnoucements();
+        campus.getCampusGroup().postAnnouncement(announcement);
     }
 }

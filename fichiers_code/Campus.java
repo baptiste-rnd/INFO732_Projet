@@ -3,9 +3,12 @@ package fichiers_code;
 public class Campus {
     // Attributs
     private static Campus instance;
+    private CampusGroup campusGroup;
 
     // Constructor
-    private Campus() {}
+    private Campus() {
+        this.campusGroup = new CampusGroup(null);
+    }
 
     // Methods
     public static Campus getInstance(String name) {
@@ -13,5 +16,9 @@ public class Campus {
             instance = new Campus();
         }
         return instance;
+    }
+
+    public CampusGroup getCampusGroup() {
+        return campusGroup;
     }
 }
