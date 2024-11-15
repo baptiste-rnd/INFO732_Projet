@@ -18,7 +18,7 @@ public class Main {
         // Creation d'un deuxieme groupe
         List<Object> res2 = user3.createGroupe("test2");
         Group group2 = (Group) res2.get(0);
-        AdminGroup admingroup2 = (AdminGroup) res2.get(1);
+        // AdminGroup admingroup2 = (AdminGroup) res2.get(1);
 
         // L'admin ajoute un autre membre au groupe
         admingroup1.inviteUser(user2);

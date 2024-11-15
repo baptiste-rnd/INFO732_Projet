@@ -154,4 +154,10 @@ public class User implements GroupListener {
     public void onUserExcluded(Group group, User user) {
         // pass
     }
+
+    public void createAnnouncement (String title, String content) {
+        Announcement announcement = new Announcement(title, content);
+        Campus campus = Campus.getInstance(null);
+        campus.getCampusGroup().postAnnouncement(announcement);
+    }
 }

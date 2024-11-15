@@ -25,7 +25,12 @@ public class CampusGroup extends Group {
     }
 
     public void postAnnouncement(Announcement announcement) {
+        AnnouncementList.add(announcement);
         notifyEveryoneNewMessage();
+    }
+
+    public void removeAnnouncement(Announcement announcement) {
+        AnnouncementList.remove(announcement);// Supprimer un message du chat de groupe
     }
 
 }
