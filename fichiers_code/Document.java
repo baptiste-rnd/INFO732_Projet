@@ -60,4 +60,8 @@ public abstract class Document {
         // Affiche les détails du document (titre, créateur, contenu)
     }
 
+    public void Open() {
+        
+    }
+
 }
