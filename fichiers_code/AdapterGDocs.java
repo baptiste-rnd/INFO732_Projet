@@ -8,10 +8,12 @@ public class AdapterGDocs extends Document {
     }
 
     public void Open() {
+        // appelle à une classe d'un service google Docs
         System.out.println("Le gdoc a été ouvert dans une autre fenêtre");
     }
 
     public void ConvertPDF() {
+        // appelle à une classe d'un service google Docs
         System.out.println("Le document a bien été converti en PDF");
     }
 }
