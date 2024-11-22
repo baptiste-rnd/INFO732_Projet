@@ -5,18 +5,18 @@ import fichiers_code.*;
 public class Main {
     @SuppressWarnings("unused")
     public static void main(String[] args) {
-        // Création d'utilisateurs
+        // Création des utilisateurs
         User user1 = new User(1, 1234, "Alice", "Dupont", 20, 3);
         User user2 = new User(2, 5678, "Bob", "Martin", 22, 4);
-        User user3 = new User(3, 5678, "Thomas", "Martin", 22, 4);
+        User user3 = new User(3, 9123, "Thomas", "Jean", 19, 1);
 
-        // Creation d'un groupe
-        List<Object> res = user1.createGroupe("test");
+        // Création d'un groupe
+        List<Object> res = user1.createGroupe("IDU");
         Group group1 = (Group) res.get(0);
         AdminGroup admingroup1 = (AdminGroup) res.get(1);
 
-        // Creation d'un deuxieme groupe
-        List<Object> res2 = user3.createGroupe("test2");
+        // Creation d'un deuxième groupe
+        List<Object> res2 = user3.createGroupe("SNI");
         Group group2 = (Group) res2.get(0);
         // AdminGroup admingroup2 = (AdminGroup) res2.get(1);
 
@@ -30,7 +30,7 @@ public class Main {
         user1.createMessage("Hello, this is a test message!", group1);
         user2.createMessage("coucou @Alice", group1);
 
-        // affichage du chat
+        // Affichage du chat
         System.out.println(" \nChat du groupe: ");
         group1.afficherChat();
 
@@ -53,15 +53,15 @@ public class Main {
         user2.modifyDocument(document, "Updated document content.");
         document.String();
 
-        // ajout du doc dans le groupe
+        // Ajout du doc dans le groupe
         user2.publishDocument(document, group1);
 
-        // ajout d'un doc quand fais pas partie du groupe
+        // Ajout d'un doc quand fais pas partie du groupe
         user2.publishDocument(document, group2);
 
         System.out.println("Membres du groupe2 :\n" + group2.getMembres() + "\n");
 
-        // exclusion d'un membre
+        // Exclusion d'un membre
         admingroup1.excludeUser(user2);
 
         System.out.println("Message du chat du groupe 1:\n");
