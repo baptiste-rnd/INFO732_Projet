@@ -112,9 +112,13 @@ public class User implements GroupListener {
             PDF newPDF = new PDF(title, content, format, this, false);
             return newPDF;
         }
-        if (format.equals("video")) {
-            Video newVideo = new Video(title, content, format, this, false);
-            return newVideo;
+        if (format.equals("powerpoint")) {
+            Powerpoint newPowerpoint = new Powerpoint(title, content, format, this, false);
+            return newPowerpoint;
+        }
+        if (format.equals("gdocs")) {
+            AdapterGDocs newAdapterGDocs = new AdapterGDocs(title, content, format, this, false);
+            return newAdapterGDocs;
         }
     }
 
