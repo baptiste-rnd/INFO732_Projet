@@ -120,6 +120,7 @@ public class User implements GroupListener {
             AdapterGDocs newAdapterGDocs = new AdapterGDocs(title, content, format, this, false);
             return newAdapterGDocs;
         }
+        return null;
     }
 
     public void publishDocument(Document document, Group group) {
