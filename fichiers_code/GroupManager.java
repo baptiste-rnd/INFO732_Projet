@@ -57,9 +57,13 @@ public class GroupManager {
     }
 
     // Méthode pour notifier qu'un nouveau message a été reçu
-    public void notifyMessageReceived(Group group) {
+    public void notifyMessageReceived(Group group, User membre) {
         for (GroupListener listener : groupListeners) {
-            listener.onMessageReceived(group);
+            if (listener == membre) {
+                listener.onSuperMessageReceived(group);
+            } else {
+                listener.onMessageReceived(group);
+            }
         }
     }
 }

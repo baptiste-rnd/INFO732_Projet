@@ -49,7 +49,35 @@ public class Group {
 
     public void addMessage(Message message) {
         chat.add(message); // Ajoute un message au chat du groupe
-        this.notifyEveryoneNewMessage();
+        User membre = null; // Utilisateur mentionné (si trouvé)
+        String name_member = ""; // Nom extrait après @
+        String content_message = message.getContent();
+
+        // Vérifie la présence d'une mention (@) dans le message
+        if (content_message.contains("@")) {
+            int atIndex = content_message.indexOf('@');
+            int spaceIndex = content_message.indexOf(' ', atIndex);
+
+            // Si aucun espace trouvé après @, prendre tout jusqu'à la fin
+            if (spaceIndex == -1) {
+                name_member = content_message.substring(atIndex + 1);
+            } else {
+                // Extraire le texte entre @ et le premier espace
+                name_member = content_message.substring(atIndex + 1, spaceIndex);
+            }
+
+            // Recherche de l'utilisateur mentionné dans la liste des membres
+            for (User user : membres) {
+                if (user.getName().equals(name_member)) {
+                    membre = user;
+                    break; // Arrêter la boucle dès qu'on trouve l'utilisateur
+                }
+            }
+        }
+
+        // Notifier tout le monde du nouveau message, avec l'utilisateur mentionné (si
+        // applicable)
+        this.notifyEveryoneNewMessage(membre);
     }
 
     public void removeMessage(Message message) {
@@ -79,8 +107,8 @@ public class Group {
         this.documents.remove(document);// Supprimer un document du chat de groupe
     }
 
-    public void notifyEveryoneNewMessage() {
-        groupmanager.notifyMessageReceived(this);
+    public void notifyEveryoneNewMessage(User member) {
+        groupmanager.notifyMessageReceived(this, member);
     }
 
     public ArrayList<User> getMembres() {

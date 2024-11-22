@@ -26,7 +26,7 @@ public class CampusGroup extends Group {
 
     public void postAnnouncement(Announcement announcement) {
         AnnouncementList.add(announcement);
-        notifyEveryoneNewMessage();
+        notifyEveryoneNewMessage(null);
     }
 
     public void removeAnnouncement(Announcement announcement) {

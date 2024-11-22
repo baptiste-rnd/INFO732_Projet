@@ -28,7 +28,7 @@ public class Main {
 
         // Ajout d'un message
         user1.createMessage("Hello, this is a test message!", group1);
-        user2.createMessage("coucou", group1);
+        user2.createMessage("coucou @Alice", group1);
 
         // affichage du chat
         System.out.println(" \nChat du groupe: ");
@@ -66,8 +66,9 @@ public class Main {
 
         System.out.println("Message du chat du groupe 1:\n");
         admingroup1.seeMessage(group1);
+
         // Test de la classe Campus
-        Campus campus = Campus.getInstance("Polytech");
+        Campus campus = Campus.getInstance();
         System.out.println("Campus instance: " + campus);
 
         // Test de la classe CampusGroup
@@ -77,6 +78,6 @@ public class Main {
         campus.getCampusGroup().addMembre(user3);
         campus.getCampusGroup().viewAnnoucements();
         campus.getCampusGroup().postAnnouncement(announcement);
-        
+
     }
 }

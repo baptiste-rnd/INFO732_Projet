@@ -104,8 +104,18 @@ public class User implements GroupListener {
     }
 
     public Document createDocument(String title, String content, String format) {
-        Document newDocument = new Document(title, content, format, this, false);
-        return newDocument;
+        if (format.equals("video")) {
+            Video newVideo = new Video(title, content, format, this, false);
+            return newVideo;
+        }
+        if (format.equals("pdf")) {
+            PDF newPDF = new PDF(title, content, format, this, false);
+            return newPDF;
+        }
+        if (format.equals("video")) {
+            Video newVideo = new Video(title, content, format, this, false);
+            return newVideo;
+        }
     }
 
     public void publishDocument(Document document, Group group) {
@@ -155,9 +165,14 @@ public class User implements GroupListener {
         // pass
     }
 
-    public void createAnnouncement (String title, String content) {
+    public void createAnnouncement(String title, String content) {
         Announcement announcement = new Announcement(title, content);
-        Campus campus = Campus.getInstance(null);
+        Campus campus = Campus.getInstance();
         campus.getCampusGroup().postAnnouncement(announcement);
+    }
+
+    @Override
+    public void onSuperMessageReceived(Group group) {
+        System.out.println(name + " a recu le super message");
     }
 }

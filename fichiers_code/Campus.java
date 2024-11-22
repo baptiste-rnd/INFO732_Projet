@@ -10,11 +10,11 @@ public class Campus {
     }
 
     // Methods
-    public static Campus getInstance(String name) {
+    public static Campus getInstance() {
         if (instance == null) {
             instance = new Campus();
         }
-        if (campusGroup == null) { 
+        if (campusGroup == null) {
             campusGroup = new CampusGroup("Groupe Campus");
         }
         return instance;

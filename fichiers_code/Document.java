@@ -1,6 +1,6 @@
 package fichiers_code;
 
-public class Document {
+public abstract class Document {
     private String title, content, format;
     private User owner;
     private boolean isShared;
