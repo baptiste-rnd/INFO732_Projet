@@ -61,7 +61,11 @@ public abstract class Document {
     }
 
     public void Open() {
-        
+
+    }
+
+    public void ConvertPDF() {
+
     }
 
 }
