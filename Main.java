@@ -79,7 +79,7 @@ public class Main {
         campus.getCampusGroup().viewAnnoucements();
         campus.getCampusGroup().postAnnouncement(announcement);
 
-        Document gdocs = user1.createDocument("test", "this is a test GDocs", "Gdocs");
+        Document gdocs = user1.createDocument("test", "this is a test GDocs", "gdocs");
         gdocs.Open();
         gdocs.ConvertPDF();
     }

@@ -8,7 +8,7 @@ public class AdapterGDocs extends Document {
     }
 
     public void Open() {
-        System.out.println("Le doc a été ouvert dans une autr fenêtre");
+        System.out.println("Le gdoc a été ouvert dans une autre fenêtre");
     }
 
     public void ConvertPDF() {
