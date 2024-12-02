@@ -1,5 +1,8 @@
 package fichiers_code;
 
+// Singleton bien
+// Cependant, CampusGroup aurait pu être directement le singleton étant donné que les announcements ne sont
+// pas stocké dans Campus contrairement à ce que le diagramme de classe indique.
 public class Campus {
     // Attributs
     private static Campus instance;

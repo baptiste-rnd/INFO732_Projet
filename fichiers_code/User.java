@@ -172,6 +172,7 @@ public class User implements GroupListener {
 
     public void createAnnouncement(String title, String content) {
         Announcement announcement = new Announcement(title, content);
+        // Singleton pratique dans ce cas là, OK
         Campus campus = Campus.getInstance();
         campus.getCampusGroup().postAnnouncement(announcement);
     }

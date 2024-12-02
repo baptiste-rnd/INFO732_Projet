@@ -3,6 +3,7 @@ package fichiers_code;
 import java.util.ArrayList;
 import java.util.List;
 
+// Observer parfait
 public class GroupManager {
 
     private List<GroupListener> groupListeners;
