@@ -53,6 +53,7 @@ public class Group {
         String name_member = ""; // Nom extrait après @
         String content_message = message.getContent();
 
+        // Bien
         // Vérifie la présence d'une mention (@) dans le message
         if (content_message.contains("@")) {
             int atIndex = content_message.indexOf('@');

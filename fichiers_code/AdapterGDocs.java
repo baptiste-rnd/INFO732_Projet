@@ -1,5 +1,6 @@
 package fichiers_code;
 
+// Bonne exécution
 public class AdapterGDocs extends Document {
 
     public AdapterGDocs(String title, String content, String format, User owner, boolean isShared) {
